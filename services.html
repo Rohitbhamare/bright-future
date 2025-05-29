@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Bright Future Tours & Travels</title>
+    <meta name="description"
+        content="Explore our comprehensive travel services including local & outstation cab booking, premium vehicles, airport transfers, and international packages.">
+    <meta name="keywords"
+        content="travel services, cab booking, premium cars, airport transfer, international packages, religious tours">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.8)), url('/placeholder.svg?height=600&width=1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .animate-slideUp {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .destination-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .destination-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .destination-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-r from-blue-900 to-blue-600 rounded-lg flex items-center justify-center">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-blue-900">Bright Future</h1>
+                        <p class="text-xs text-gray-600">Tours & Travels</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">About</a>
+                    <a href="services.html"
+                        class="text-blue-900 hover:text-yellow-600 font-medium transition-colors">Services</a>
+                    <a href="gallery.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Gallery</a>
+                    <a href="contact.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Contact Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+919595120405"
+                        class="p-2 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://wa.me/919595120405"
+                        class="p-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">About</a>
+                    <a href="services.html" class="text-blue-900 hover:text-yellow-600 font-medium py-2">Services</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header py-32 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">Our Services</h1>
+                <p class="text-xl max-w-3xl mx-auto animate-slideUp">Comprehensive travel solutions for every journey
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Overview Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Our Premium Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover our range of travel services designed to
+                    meet all your transportation needs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="service-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div class="h-32 bg-gradient-to-br from-blue-600 to-blue-800 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="service-icon w-16 h-16 bg-white/20 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i data-lucide="map" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Local & Outstation Cab</h3>
+                        <p class="text-gray-700 text-sm mb-4">Comfortable rides for city tours and outstation journeys
+                        </p>
+                        <a href="#pricing"
+                            class="inline-flex items-center text-blue-900 font-semibold hover:text-yellow-600 transition-colors">
+                            View Pricing <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="service-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div class="h-32 bg-gradient-to-br from-yellow-500 to-yellow-700 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="service-icon w-16 h-16 bg-white/20 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i data-lucide="crown" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Premium Vehicles</h3>
+                        <p class="text-gray-700 text-sm mb-4">Mercedes, BMW, Crysta for luxury travel</p>
+                        <a href="#premium-fleet"
+                            class="inline-flex items-center text-blue-900 font-semibold hover:text-yellow-600 transition-colors">
+                            View Fleet <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="service-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div class="h-32 bg-gradient-to-br from-green-600 to-green-800 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="service-icon w-16 h-16 bg-white/20 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i data-lucide="plane" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Airport Transfer</h3>
+                        <p class="text-gray-700 text-sm mb-4">Punctual pickup & drop services</p>
+                        <a href="#airport-pricing"
+                            class="inline-flex items-center text-blue-900 font-semibold hover:text-yellow-600 transition-colors">
+                            View Rates <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                    class="service-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div class="h-32 bg-gradient-to-br from-purple-600 to-purple-800 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="service-icon w-16 h-16 bg-white/20 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Group Travel</h3>
+                        <p class="text-gray-700 text-sm mb-4">Tempo & Bus for 14-50 passengers</p>
+                        <a href="#group-pricing"
+                            class="inline-flex items-center text-blue-900 font-semibold hover:text-yellow-600 transition-colors">
+                            View Options <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Transparent Pricing</h2>
+                <p class="text-xl text-gray-600">No hidden charges, competitive rates for all services</p>
+            </div>
+
+            <!-- Pricing Tabs -->
+            <div class="flex flex-wrap justify-center mb-8">
+                <button onclick="showPricing('outstation')" id="tab-outstation"
+                    class="px-6 py-3 mx-2 mb-2 bg-blue-900 text-white rounded-lg font-semibold">Outstation</button>
+                <button onclick="showPricing('local')" id="tab-local"
+                    class="px-6 py-3 mx-2 mb-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300">Local
+                    Tours</button>
+                <button onclick="showPricing('airport')" id="tab-airport"
+                    class="px-6 py-3 mx-2 mb-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300">Airport</button>
+                <button onclick="showPricing('premium')" id="tab-premium"
+                    class="px-6 py-3 mx-2 mb-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300">Premium</button>
+            </div>
+
+            <!-- Outstation Pricing -->
+            <div id="pricing-outstation" class="pricing-content">
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                        <thead class="bg-blue-900 text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left">Popular Routes</th>
+                                <th class="px-6 py-4 text-left">Sedan</th>
+                                <th class="px-6 py-4 text-left">Ertiga/Innova</th>
+                                <th class="px-6 py-4 text-left">Crysta</th>
+                                <th class="px-6 py-4 text-left">Tempo (14-17)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Nashik - Mumbai (165 km)</td>
+                                <td class="px-6 py-4">₹2,500 + Toll</td>
+                                <td class="px-6 py-4">₹3,200 + Toll</td>
+                                <td class="px-6 py-4">₹4,000 + Toll</td>
+                                <td class="px-6 py-4">₹5,500 + Toll</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Nashik - Pune (210 km)</td>
+                                <td class="px-6 py-4">₹3,500 + Toll</td>
+                                <td class="px-6 py-4">₹4,200 + Toll</td>
+                                <td class="px-6 py-4">₹5,200 + Toll</td>
+                                <td class="px-6 py-4">₹6,500 + Toll</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Nashik - Shirdi (85 km)</td>
+                                <td class="px-6 py-4">₹1,800 + Toll</td>
+                                <td class="px-6 py-4">₹2,200 + Toll</td>
+                                <td class="px-6 py-4">₹2,800 + Toll</td>
+                                <td class="px-6 py-4">₹4,000 + Toll</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Nashik - Aurangabad (115 km)</td>
+                                <td class="px-6 py-4">₹2,200 + Toll</td>
+                                <td class="px-6 py-4">₹2,800 + Toll</td>
+                                <td class="px-6 py-4">₹3,500 + Toll</td>
+                                <td class="px-6 py-4">₹4,800 + Toll</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Nashik - Goa (465 km)</td>
+                                <td class="px-6 py-4">₹8,500 + Toll</td>
+                                <td class="px-6 py-4">₹10,200 + Toll</td>
+                                <td class="px-6 py-4">₹12,500 + Toll</td>
+                                <td class="px-6 py-4">₹15,000 + Toll</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600 mb-4">*Prices include driver allowance, fuel, and parking charges</p>
+                    <p class="text-sm text-gray-500">For destinations not listed, rates: Sedan ₹15/km | Ertiga/Innova
+                        ₹18/km | Crysta ₹22/km | Tempo ₹25/km</p>
+                </div>
+            </div>
+
+            <!-- Local Pricing -->
+            <div id="pricing-local" class="pricing-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="clock" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">4 Hours / 40 KM</h3>
+                            <p class="text-gray-600">Half Day Package</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Sedan (Swift Dzire)</span>
+                                <span class="font-bold text-blue-900">₹1,200</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Ertiga</span>
+                                <span class="font-bold text-blue-900">₹1,500</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Innova</span>
+                                <span class="font-bold text-blue-900">₹1,800</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Crysta</span>
+                                <span class="font-bold text-blue-900">₹2,200</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-yellow-400">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="sun" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">8 Hours / 80 KM</h3>
+                            <p class="text-gray-600">Full Day Package</p>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">Most
+                                Popular</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Sedan (Swift Dzire)</span>
+                                <span class="font-bold text-blue-900">₹2,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Ertiga</span>
+                                <span class="font-bold text-blue-900">₹2,500</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Innova</span>
+                                <span class="font-bold text-blue-900">₹3,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Crysta</span>
+                                <span class="font-bold text-blue-900">₹3,600</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="moon" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">12 Hours / 120 KM</h3>
+                            <p class="text-gray-600">Extended Package</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Sedan (Swift Dzire)</span>
+                                <span class="font-bold text-blue-900">₹2,800</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Ertiga</span>
+                                <span class="font-bold text-blue-900">₹3,500</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Innova</span>
+                                <span class="font-bold text-blue-900">₹4,200</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Crysta</span>
+                                <span class="font-bold text-blue-900">₹5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600">*Extra hours: ₹150-300/hour | Extra KM: ₹12-20/km depending on vehicle type
+                    </p>
+                </div>
+            </div>
+
+            <!-- Airport Pricing -->
+            <div id="pricing-airport" class="pricing-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="plane" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">Mumbai Airport</h3>
+                            <p class="text-gray-600">Chhatrapati Shivaji International</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span>Sedan (Swift Dzire)</span>
+                                <span class="font-bold text-blue-900">₹2,800</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Ertiga</span>
+                                <span class="font-bold text-blue-900">₹3,300</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Innova</span>
+                                <span class="font-bold text-blue-900">₹3,800</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Crysta</span>
+                                <span class="font-bold text-blue-900">₹4,500</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Tempo Traveller</span>
+                                <span class="font-bold text-blue-900">₹6,500</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">Includes:</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Toll charges</li>
+                                <li>• Parking fees</li>
+                                <li>• Driver allowance</li>
+                                <li>• Flight tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="plane" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">Pune Airport</h3>
+                            <p class="text-gray-600">Pune International Airport</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span>Sedan (Swift Dzire)</span>
+                                <span class="font-bold text-blue-900">₹3,800</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Ertiga</span>
+                                <span class="font-bold text-blue-900">₹4,300</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Innova</span>
+                                <span class="font-bold text-blue-900">₹4,800</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Crysta</span>
+                                <span class="font-bold text-blue-900">₹5,500</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Tempo Traveller</span>
+                                <span class="font-bold text-blue-900">₹7,500</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-purple-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">Special Services:</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Meet & greet service</li>
+                                <li>• Luggage assistance</li>
+                                <li>• 24/7 availability</li>
+                                <li>• Free waiting (1 hour)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Fleet Pricing -->
+            <div id="pricing-premium" class="pricing-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-gray-900 to-gray-700 text-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-center mb-6">
+                            <img src="/placeholder.svg?height=120&width=200" alt="Mercedes"
+                                class="mx-auto mb-4 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-2">Mercedes E-Class</h3>
+                            <p class="text-gray-300">Ultimate Luxury Experience</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Local (8 hrs/80km)</span>
+                                <span class="font-bold text-yellow-400">₹8,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Outstation</span>
+                                <span class="font-bold text-yellow-400">₹35/km</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Airport Transfer</span>
+                                <span class="font-bold text-yellow-400">₹6,500</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-white/10 rounded-lg">
+                            <h4 class="font-semibold mb-2">Features:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Professional chauffeur</li>
+                                <li>• Premium interiors</li>
+                                <li>• Complimentary water</li>
+                                <li>• Wi-Fi available</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-900 to-blue-700 text-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-center mb-6">
+                            <img src="/placeholder.svg?height=120&width=200" alt="BMW" class="mx-auto mb-4 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-2">BMW 5 Series</h3>
+                            <p class="text-gray-300">Executive Class Comfort</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Local (8 hrs/80km)</span>
+                                <span class="font-bold text-yellow-400">₹7,500</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Outstation</span>
+                                <span class="font-bold text-yellow-400">₹32/km</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Airport Transfer</span>
+                                <span class="font-bold text-yellow-400">₹6,000</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-white/10 rounded-lg">
+                            <h4 class="font-semibold mb-2">Features:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Leather interiors</li>
+                                <li>• Climate control</li>
+                                <li>• Premium sound system</li>
+                                <li>• Experienced driver</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-yellow-600 to-yellow-500 text-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-center mb-6">
+                            <img src="/placeholder.svg?height=120&width=200" alt="Mahindra Thar"
+                                class="mx-auto mb-4 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-2">Mahindra Thar</h3>
+                            <p class="text-gray-100">Adventure & Style</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Local (8 hrs/80km)</span>
+                                <span class="font-bold text-gray-900">₹4,500</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Outstation</span>
+                                <span class="font-bold text-gray-900">₹25/km</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Airport Transfer</span>
+                                <span class="font-bold text-gray-900">₹4,200</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-white/20 rounded-lg">
+                            <h4 class="font-semibold mb-2">Perfect For:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Adventure trips</li>
+                                <li>• Hill station tours</li>
+                                <li>• Photography shoots</li>
+                                <li>• Special occasions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Popular Destinations</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore India's most beautiful destinations with our
+                    comfortable travel services</p>
+            </div>
+
+            <!-- Religious Destinations -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">Religious & Spiritual Places</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="destination-card h-80 relative">
+                        <img src="https://assets.telegraphindia.com/telegraph/ramnavami1.jpg"
+                            alt="Shirdi Sai Baba Temple" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Shirdi</h4>
+                            <p class="text-sm mb-3">Home of Sai Baba, 85km from Mumbai</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹1,800</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tirumala_Anand_nilayam4653.jpg/960px-Tirumala_Anand_nilayam4653.jpg"
+                            alt="Tirupati Balaji Temple" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Tirupati</h4>
+                            <p class="text-sm mb-3">Lord Venkateswara Temple, Andhra Pradesh</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹12,000</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/manikarnika-ghat-city-hero?qlt=82&ts=1727959374496"
+                            alt="Varanasi Ghats" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Varanasi</h4>
+                            <p class="text-sm mb-3">Spiritual capital of India, Uttar Pradesh</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹18,000</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/31/92/93.jpg"
+                            alt="Ajanta Ellora Caves" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Ajanta Ellora</h4>
+                            <p class="text-sm mb-3">UNESCO World Heritage Sites, Aurangabad</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹2,200</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hill Stations -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">Hill Stations & Nature</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="destination-card h-80 relative">
+                        <img src="https://d3sftlgbtusmnv.cloudfront.net/blog/wp-content/uploads/2024/10/Places-to-Visit-in-Lonavala-OG-Cover-840x425.jpg"
+                            alt="Lonavala Hills" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Lonavala</h4>
+                            <p class="text-sm mb-3">Scenic hill station, Maharashtra</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹3,500</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/pratapgarh-fort-mahabaleshwar-maharashtra-1-attr-nearby?qlt=82&ts=1726668880856"
+                            alt="Mahabaleshwar" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Mahabaleshwar</h4>
+                            <p class="text-sm mb-3">Queen of hill stations, Maharashtra</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹4,200</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://www.abhibus.com/blog/wp-content/uploads/2023/05/Top-20-Places-to-Visit-in-Ooty-in-2023-That-You-Never-Miss-in-Lifetime-1024x683.jpg"
+                            alt="Ooty Nilgiris" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Ooty</h4>
+                            <p class="text-sm mb-3">Queen of Nilgiris, Tamil Nadu</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹15,000</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fc/f0/goa.jpg?w=1400&h=1400&s=1"
+                            alt="Goa Beaches" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Goa</h4>
+                            <p class="text-sm mb-3">Beach paradise, 465km from Mumbai</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹8,500</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Major Cities -->
+            <div>
+                <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">Major Cities & Business Hubs</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="destination-card h-80 relative">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/gateway-of-india-mumbai-maharashtra-2-attr-hero?qlt=82&ts=1727355556744"
+                            alt="Mumbai Gateway of India" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Mumbai</h4>
+                            <p class="text-sm mb-3">Financial capital of India</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹2,500</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D12AQGv-ZnXHutpWw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1699143662834?e=2147483647&v=beta&t=L8S8jU_0OMXdcr-oGI6lzCNs4YP61Ky_J99ulbwM8Rs"
+                            alt="Pune IT City" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Pune</h4>
+                            <p class="text-sm mb-3">Oxford of the East, IT hub</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹3,500</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://cdn.britannica.com/37/189837-050-F0AF383E/New-Delhi-India-War-Memorial-arch-Sir.jpg"
+                            alt="Delhi Red Fort" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Delhi</h4>
+                            <p class="text-sm mb-3">National capital, rich heritage</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹25,000</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card h-80 relative">
+                        <img src="https://www.euroschoolindia.com/blogs/wp-content/uploads/2024/02/20-Facts-About-Bangalore-Students-Should-Know.jpg"
+                            alt="Bangalore IT City" class="w-full h-full object-cover">
+                        <div class="destination-content absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h4 class="text-xl font-bold mb-2">Bangalore</h4>
+                            <p class="text-sm mb-3">Silicon Valley of India</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-yellow-400 font-semibold">From ₹18,000</span>
+                                <a href="contact.html"
+                                    class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs transition-colors">Book
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Packages Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">International Holiday Packages</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore the world with our carefully curated
+                    international tour packages</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dubai Package -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 relative">
+                        <img src="https://www.burjkhalifa.ae/wp-content/uploads/2024/08/BURJ-KHALIFE-Hero-image-1-min-1.jpg"
+                            alt="Dubai Burj Khalifa" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Best Seller
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Dubai Delight</h3>
+                        <p class="text-gray-600 mb-4">5 Days / 4 Nights</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Burj Khalifa & Dubai Mall</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Desert Safari with BBQ Dinner</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Dubai Marina Dhow Cruise</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>4* Hotel Accommodation</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-2xl font-bold text-blue-900">₹45,999</span>
+                                <span class="text-gray-500 line-through ml-2">₹55,999</span>
+                            </div>
+                            <a href="contact.html"
+                                class="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Singapore Package -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 relative">
+                        <img src="https://www.pelago.com/img/collections/marina-bay-sands/0712-0705_marina-bay-sands.jpg"
+                            alt="Singapore Marina Bay" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Singapore Splendor</h3>
+                        <p class="text-gray-600 mb-4">6 Days / 5 Nights</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Universal Studios Singapore</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Gardens by the Bay</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Sentosa Island Tour</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Marina Bay Sands SkyPark</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-2xl font-bold text-blue-900">₹65,999</span>
+                                <span class="text-gray-500 line-through ml-2">₹75,999</span>
+                            </div>
+                            <a href="contact.html"
+                                class="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thailand Package -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 relative">
+                        <img src="https://ik.imgkit.net/3vlqs5axxjf/external/http://images.ntmllc.com/v4/destination/Thailand/Phuket-City/220668_SCN_Phuket_iStock910551026_Z20B18.jpg?tr=w-1200%2Cfo-auto"
+                            alt="Thailand Phuket Beach" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Thailand Paradise</h3>
+                        <p class="text-gray-600 mb-4">7 Days / 6 Nights</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Bangkok City Tour</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Phuket Beach Resort</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Phi Phi Island Tour</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mr-2"></i>
+                                <span>Traditional Thai Massage</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-2xl font-bold text-blue-900">₹52,999</span>
+                                <span class="text-gray-500 line-through ml-2">₹62,999</span>
+                            </div>
+                            <a href="contact.html"
+                                class="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-colors">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Maldives Package -->
+
+
+
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-6">*All packages include flights, accommodation, meals, and guided tours.
+                    Visa assistance available.</p>
+                <a href="contact.html"
+                    class="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105">
+                    <i data-lucide="globe" class="w-5 h-5 mr-2"></i>
+                    Customize Your Package
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Get answers to common questions about our services
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">How do I book a cab?</h3>
+                        <p class="text-gray-700">You can book through our website, call us at +91 9595 120405, or
+                            WhatsApp us. We're available 24/7 for bookings.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Are your drivers licensed and verified?
+                        </h3>
+                        <p class="text-gray-700">Yes, all our drivers are licensed, experienced, and
+                            background-verified. They undergo regular training for customer service.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">What payment methods do you accept?</h3>
+                        <p class="text-gray-700">We accept cash, UPI, credit/debit cards, and online bank transfers.
+                            Payment can be made before or after the trip.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Do you provide child seats?</h3>
+                        <p class="text-gray-700">Yes, we provide child seats on request. Please mention this requirement
+                            while booking to ensure availability.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Can I cancel or modify my booking?</h3>
+                        <p class="text-gray-700">Yes, you can cancel or modify bookings up to 2 hours before the
+                            scheduled time. Cancellation charges may apply for last-minute changes.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Are tolls and parking included in the fare?
+                        </h3>
+                        <p class="text-gray-700">Tolls and parking charges are additional unless specified otherwise. We
+                            provide transparent pricing with no hidden charges.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Do you provide outstation services?</h3>
+                        <p class="text-gray-700">Yes, we provide outstation services across India. We offer both one-way
+                            and round-trip options with competitive pricing.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">What safety measures do you follow?</h3>
+                        <p class="text-gray-700">All vehicles are regularly sanitized, drivers wear masks, and we
+                            maintain social distancing protocols. GPS tracking is available for all trips.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Start Your Journey?</h2>
+            <p class="text-xl text-blue-100 mb-8">Book now and experience premium travel services with Bright Future
+                Tours</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105">
+                    Book Your Ride Now
+                </a>
+                <a href="tel:+919595120405"
+                    class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-4 rounded-full transition-all">
+                    Call +91 9595 120405
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Bright Future</h3>
+                            <p class="text-sm text-gray-400">Tours & Travels</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted travel partner for comfortable and affordable journeys
+                        across India and beyond.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400">Outstation Cab</span></li>
+                        <li><span class="text-gray-400">Local Tours</span></li>
+                        <li><span class="text-gray-400">Airport Drop</span></li>
+                        <li><span class="text-gray-400">Premium Cars</span></li>
+                        <li><span class="text-gray-400">International Tours</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
+                            <a href="tel:+919595120405" class="text-gray-400 hover:text-white transition-colors">+91
+                                9595 120405</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                            <a href="mailto:contact@brightfuturetravels.com"
+                                class="text-gray-400 hover:text-white transition-colors">contact@brightfuturetravels.com</a>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-400 mt-1"></i>
+                            <span class="text-gray-400">Mumbai, Maharashtra, India</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-400">24/7 Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Bright Future Tours & Travels. All rights reserved. | Designed with
+                    ❤️ for travelers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919595120405"
+        class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-2xl z-50 transition-all transform hover:scale-110">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-white/95', 'shadow-lg');
+            }
+        });
+
+        // Pricing tabs
+        function showPricing(type) {
+            // Hide all pricing content
+            document.querySelectorAll('.pricing-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('[id^="tab-"]').forEach(tab => {
+                tab.classList.remove('bg-blue-900', 'text-white');
+                tab.classList.add('bg-gray-200', 'text-gray-700');
+            });
+
+            // Show selected pricing content
+            document.getElementById(`pricing-${type}`).classList.remove('hidden');
+
+            // Add active class to selected tab
+            document.getElementById(`tab-${type}`).classList.remove('bg-gray-200', 'text-gray-700');
+            document.getElementById(`tab-${type}`).classList.add('bg-blue-900', 'text-white');
+        }
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

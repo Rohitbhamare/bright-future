@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Bright Future Tours & Travels</title>
+    <meta name="description"
+        content="Explore our gallery showcasing premium vehicles, beautiful destinations, happy customers, and memorable trips with Bright Future Tours & Travels.">
+    <meta name="keywords"
+        content="travel gallery, vehicle photos, destination images, customer photos, travel memories">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.8)), url('/placeholder.svg?height=600&width=1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .animate-slideUp {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-btn.active {
+            background: #1e3a8a;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-r from-blue-900 to-blue-600 rounded-lg flex items-center justify-center">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-blue-900">Bright Future</h1>
+                        <p class="text-xs text-gray-600">Tours & Travels</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">About</a>
+                    <a href="services.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Services</a>
+                    <a href="gallery.html"
+                        class="text-blue-900 hover:text-yellow-600 font-medium transition-colors">Gallery</a>
+                    <a href="contact.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Contact Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+919595120405"
+                        class="p-2 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://wa.me/919595120405"
+                        class="p-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">About</a>
+                    <a href="services.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Services</a>
+                    <a href="gallery.html" class="text-blue-900 hover:text-yellow-600 font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header py-32 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">Our Gallery</h1>
+                <p class="text-xl max-w-3xl mx-auto animate-slideUp">Explore our premium vehicles, beautiful
+                    destinations, and happy customers</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Filter Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Filter by Category</h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="filterGallery('all')"
+                        class="filter-btn active px-6 py-3 rounded-full font-semibold transition-all bg-gray-200 text-gray-700 hover:bg-blue-900 hover:text-white">
+                        All Photos
+                    </button>
+                    <button onclick="filterGallery('vehicles')"
+                        class="filter-btn px-6 py-3 rounded-full font-semibold transition-all bg-gray-200 text-gray-700 hover:bg-blue-900 hover:text-white">
+                        Our Fleet
+                    </button>
+                    <button onclick="filterGallery('destinations')"
+                        class="filter-btn px-6 py-3 rounded-full font-semibold transition-all bg-gray-200 text-gray-700 hover:bg-blue-900 hover:text-white">
+                        Destinations
+                    </button>
+                    <button onclick="filterGallery('customers')"
+                        class="filter-btn px-6 py-3 rounded-full font-semibold transition-all bg-gray-200 text-gray-700 hover:bg-blue-900 hover:text-white">
+                        Happy Customers
+                    </button>
+                    <button onclick="filterGallery('premium')"
+                        class="filter-btn px-6 py-3 rounded-full font-semibold transition-all bg-gray-200 text-gray-700 hover:bg-blue-900 hover:text-white">
+                        Premium Cars
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Vehicle Photos -->
+                <div class="gallery-item vehicles h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Swift Dzire - Comfortable Sedan')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Swift Dzire Sedan"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Swift Dzire</h3>
+                        <p class="text-sm">Comfortable Sedan for City Tours</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item vehicles h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Maruti Ertiga - Spacious MPV')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Maruti Ertiga"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Maruti Ertiga</h3>
+                        <p class="text-sm">Spacious 7-Seater MPV</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item vehicles h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Toyota Innova Crysta - Premium SUV')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Toyota Innova Crysta"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Toyota Innova Crysta</h3>
+                        <p class="text-sm">Premium SUV for Long Journeys</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item vehicles h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Tempo Traveller - Group Travel')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Tempo Traveller"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Tempo Traveller</h3>
+                        <p class="text-sm">14-17 Seater for Group Travel</p>
+                    </div>
+                </div>
+
+                <!-- Premium Cars -->
+                <div class="gallery-item premium h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Mercedes E-Class - Ultimate Luxury')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Mercedes E-Class"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Mercedes E-Class</h3>
+                        <p class="text-sm">Ultimate Luxury Experience</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item premium h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'BMW 5 Series - Executive Comfort')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="BMW 5 Series"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">BMW 5 Series</h3>
+                        <p class="text-sm">Executive Class Comfort</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item premium h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Mahindra Thar - Adventure Ready')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Mahindra Thar"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Mahindra Thar</h3>
+                        <p class="text-sm">Adventure & Style Combined</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item premium h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Audi A6 - Luxury Sedan')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Audi A6" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Audi A6</h3>
+                        <p class="text-sm">Premium Luxury Sedan</p>
+                    </div>
+                </div>
+
+                <!-- Destinations -->
+                <div class="gallery-item destinations h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Shirdi Sai Baba Temple')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Shirdi Sai Baba Temple"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Shirdi</h3>
+                        <p class="text-sm">Sai Baba Temple - Spiritual Journey</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Mumbai Gateway of India')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Mumbai Gateway of India"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Mumbai</h3>
+                        <p class="text-sm">Gateway of India - Iconic Landmark</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Lonavala Hill Station')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Lonavala Hill Station"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Lonavala</h3>
+                        <p class="text-sm">Beautiful Hill Station Views</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Ajanta Ellora Caves')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Ajanta Ellora Caves"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Ajanta Ellora</h3>
+                        <p class="text-sm">UNESCO World Heritage Sites</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Goa Beaches')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Goa Beaches"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Goa</h3>
+                        <p class="text-sm">Beautiful Beaches & Nightlife</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Mahabaleshwar Hill Station')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Mahabaleshwar"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Mahabaleshwar</h3>
+                        <p class="text-sm">Queen of Hill Stations</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Pune Shaniwar Wada')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Pune Shaniwar Wada"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Pune</h3>
+                        <p class="text-sm">Historical Shaniwar Wada</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item destinations h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Tirupati Balaji Temple')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Tirupati Balaji Temple"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Tirupati</h3>
+                        <p class="text-sm">Lord Venkateswara Temple</p>
+                    </div>
+                </div>
+
+                <!-- Happy Customers -->
+                <div class="gallery-item customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Family Trip to Shirdi')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Family Trip to Shirdi"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Family Trip</h3>
+                        <p class="text-sm">Happy Family at Shirdi Temple</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Corporate Group Travel')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Corporate Group Travel"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Corporate Trip</h3>
+                        <p class="text-sm">Team Outing to Lonavala</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Wedding Transportation')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Wedding Transportation"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Wedding Service</h3>
+                        <p class="text-sm">Premium Cars for Special Day</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Airport Transfer Service')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Airport Transfer Service"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Airport Transfer</h3>
+                        <p class="text-sm">Comfortable Mumbai Airport Drop</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Group Pilgrimage Tour')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Group Pilgrimage Tour"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Pilgrimage Tour</h3>
+                        <p class="text-sm">Group Visit to Religious Sites</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Adventure Trip to Goa')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Adventure Trip to Goa"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Adventure Trip</h3>
+                        <p class="text-sm">Friends Trip to Goa Beaches</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Elderly Couple Tour')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Elderly Couple Tour"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Senior Citizens</h3>
+                        <p class="text-sm">Comfortable Travel for Elderly</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'International Tour Group')">
+                    <img src="/placeholder.svg?height=400&width=600" alt="International Tour Group"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">International Tour</h3>
+                        <p class="text-sm">Airport Transfer for Dubai Trip</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button onclick="loadMoreImages()"
+                    class="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105">
+                    <i data-lucide="plus" class="w-5 h-5 mr-2 inline"></i>
+                    Load More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials with Photos -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Customer Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Real experiences from our satisfied customers</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Customer Review 1"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex text-yellow-500 mb-3">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Excellent service for our family trip to Shirdi. The driver was
+                            very courteous and the vehicle was spotless. Highly recommended!"</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                R</div>
+                            <div>
+                                <h4 class="font-semibold text-blue-900">Rajesh Sharma</h4>
+                                <p class="text-sm text-gray-600">Family Trip to Shirdi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Customer Review 2"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex text-yellow-500 mb-3">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Perfect for our corporate team outing. The tempo traveller was
+                            comfortable and the driver was professional. Great experience!"</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                P</div>
+                            <div>
+                                <h4 class="font-semibold text-blue-900">Priya Patel</h4>
+                                <p class="text-sm text-gray-600">Corporate Team Outing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Customer Review 3"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex text-yellow-500 mb-3">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Amazing service for our wedding. The Mercedes was pristine and
+                            the chauffeur was very professional. Made our special day even more memorable!"</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                A</div>
+                            <div>
+                                <h4 class="font-semibold text-blue-900">Amit & Neha</h4>
+                                <p class="text-sm text-gray-600">Wedding Transportation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Create Your Own Memories?</h2>
+            <p class="text-xl text-blue-100 mb-8">Book your next journey with Bright Future Tours & Travels</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105">
+                    Book Your Trip Now
+                </a>
+                <a href="services.html"
+                    class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-4 rounded-full transition-all">
+                    View Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Bright Future</h3>
+                            <p class="text-sm text-gray-400">Tours & Travels</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted travel partner for comfortable and affordable journeys
+                        across India and beyond.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400">Outstation Cab</span></li>
+                        <li><span class="text-gray-400">Local Tours</span></li>
+                        <li><span class="text-gray-400">Airport Drop</span></li>
+                        <li><span class="text-gray-400">Premium Cars</span></li>
+                        <li><span class="text-gray-400">International Tours</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
+                            <a href="tel:+919595120405" class="text-gray-400 hover:text-white transition-colors">+91
+                                9595 120405</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                            <a href="mailto:contact@brightfuturetravels.com"
+                                class="text-gray-400 hover:text-white transition-colors">contact@brightfuturetravels.com</a>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-400 mt-1"></i>
+                            <span class="text-gray-400">Mumbai, Maharashtra, India</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-400">24/7 Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Bright Future Tours & Travels. All rights reserved. | Designed with
+                    ❤️ for travelers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="/placeholder.svg" alt="">
+            <div class="text-center mt-4">
+                <h3 id="lightbox-title" class="text-white text-xl font-bold"></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919595120405"
+        class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-2xl z-50 transition-all transform hover:scale-110">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-white/95', 'shadow-lg');
+            }
+        });
+
+        // Gallery filter functionality
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Remove active class from all buttons
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-900', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+
+            // Add active class to clicked button
+            event.target.classList.add('active', 'bg-blue-900', 'text-white');
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+
+            // Filter items
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Lightbox functionality
+        function openLightbox(src, title) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Load more images functionality
+        function loadMoreImages() {
+            // This would typically load more images from a server
+            // For demo purposes, we'll just show an alert
+            alert('More images would be loaded here in a real implementation!');
+        }
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

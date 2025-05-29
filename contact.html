@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bright Future Tours & Travels</title>
+    <meta name="description"
+        content="Get in touch with Bright Future Tours & Travels. Contact us for bookings, inquiries, and travel assistance. Available 24/7 for your convenience.">
+    <meta name="keywords"
+        content="contact travel agency, book cab, travel inquiry, customer support, travel assistance">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.8)), url('/placeholder.svg?height=600&width=1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .animate-slideUp {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .form-input:focus {
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-r from-blue-900 to-blue-600 rounded-lg flex items-center justify-center">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-blue-900">Bright Future</h1>
+                        <p class="text-xs text-gray-600">Tours & Travels</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">About</a>
+                    <a href="services.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Services</a>
+                    <a href="gallery.html"
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Gallery</a>
+                    <a href="contact.html"
+                        class="text-blue-900 hover:text-yellow-600 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Contact Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+919595120405"
+                        class="p-2 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://wa.me/919595120405"
+                        class="p-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">About</a>
+                    <a href="services.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Services</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-blue-900 hover:text-yellow-600 font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header py-32 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">Contact Us</h1>
+                <p class="text-xl max-w-3xl mx-auto animate-slideUp">Get in touch for bookings, inquiries, and travel
+                    assistance</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Contact Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Phone Contact -->
+                <div
+                    class="contact-card bg-gradient-to-br from-blue-600 to-blue-800 text-white p-6 rounded-2xl shadow-lg text-center">
+                    <div
+                        class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation">
+                        <i data-lucide="phone" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Call Us Now</h3>
+                    <p class="text-blue-100 mb-4">24/7 Available</p>
+                    <a href="tel:+919595120405"
+                        class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                        +91 9595 120405
+                    </a>
+                </div>
+
+                <!-- WhatsApp Contact -->
+                <div
+                    class="contact-card bg-gradient-to-br from-green-600 to-green-800 text-white p-6 rounded-2xl shadow-lg text-center">
+                    <div
+                        class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation">
+                        <i data-lucide="message-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">WhatsApp</h3>
+                    <p class="text-green-100 mb-4">Quick Response</p>
+                    <a href="https://wa.me/919595120405"
+                        class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                        Chat Now
+                    </a>
+                </div>
+
+                <!-- Email Contact -->
+                <div
+                    class="contact-card bg-gradient-to-br from-purple-600 to-purple-800 text-white p-6 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Email Us</h3>
+                    <p class="text-purple-100 mb-4">Detailed Inquiries</p>
+                    <a href="mailto:contact@brightfuturetravels.com"
+                        class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                        Send Email
+                    </a>
+                </div>
+
+                <!-- Location -->
+                <div
+                    class="contact-card bg-gradient-to-br from-yellow-500 to-yellow-700 text-white p-6 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="map-pin" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Visit Us</h3>
+                    <p class="text-yellow-100 mb-4">Mumbai, Maharashtra</p>
+                    <button onclick="scrollToMap()"
+                        class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                        View Map
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-blue-900 mb-4">Send Us a Message</h2>
+                        <p class="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.
+                        </p>
+                    </div>
+
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-semibold text-gray-700 mb-2">First Name
+                                    *</label>
+                                <input type="text" id="firstName" name="firstName" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter your first name">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-semibold text-gray-700 mb-2">Last Name
+                                    *</label>
+                                <input type="text" id="lastName" name="lastName" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter your last name">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address
+                                    *</label>
+                                <input type="email" id="email" name="email" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter your email">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number
+                                    *</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="+91 9876543210">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="service" class="block text-sm font-semibold text-gray-700 mb-2">Service Type
+                                    *</label>
+                                <select id="service" name="service" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all">
+                                    <option value="">Select a service</option>
+                                    <option value="local-cab">Local Cab Booking</option>
+                                    <option value="outstation">Outstation Travel</option>
+                                    <option value="airport-transfer">Airport Transfer</option>
+                                    <option value="premium-cars">Premium Cars</option>
+                                    <option value="group-travel">Group Travel</option>
+                                    <option value="international-packages">International Packages</option>
+                                    <option value="religious-tours">Religious Tours</option>
+                                    <option value="corporate-travel">Corporate Travel</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="travelDate" class="block text-sm font-semibold text-gray-700 mb-2">Travel
+                                    Date</label>
+                                <input type="date" id="travelDate" name="travelDate"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="pickup" class="block text-sm font-semibold text-gray-700 mb-2">Pickup
+                                    Location</label>
+                                <input type="text" id="pickup" name="pickup"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter pickup location">
+                            </div>
+                            <div>
+                                <label for="destination"
+                                    class="block text-sm font-semibold text-gray-700 mb-2">Destination</label>
+                                <input type="text" id="destination" name="destination"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter destination">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="passengers" class="block text-sm font-semibold text-gray-700 mb-2">Number of
+                                Passengers</label>
+                            <select id="passengers" name="passengers"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all">
+                                <option value="">Select number of passengers</option>
+                                <option value="1">1 Passenger</option>
+                                <option value="2">2 Passengers</option>
+                                <option value="3">3 Passengers</option>
+                                <option value="4">4 Passengers</option>
+                                <option value="5-7">5-7 Passengers</option>
+                                <option value="8-14">8-14 Passengers</option>
+                                <option value="15+">15+ Passengers</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                placeholder="Tell us more about your travel requirements..."></textarea>
+                        </div>
+
+                        <div class="flex items-start">
+                            <input type="checkbox" id="terms" name="terms" required class="mt-1 mr-3">
+                            <label for="terms" class="text-sm text-gray-600">
+                                I agree to the <a href="#" class="text-blue-900 hover:underline">Terms & Conditions</a>
+                                and <a href="#" class="text-blue-900 hover:underline">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-4 px-6 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center">
+                            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Office Details -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Get in Touch</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Office Address</h4>
+                                    <p class="text-gray-600">Bright Future Tours & Travels<br>
+                                        >
+                                        Mumbai, Maharashtra 422005<br>
+                                        India</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Phone Numbers</h4>
+                                    <p class="text-gray-600">
+                                        Primary: <a href="tel:+919595120405" class="text-blue-900 hover:underline">+91
+                                            9595 120405</a><br>
+                                        Office: <a href="tel:+912532456789" class="text-blue-900 hover:underline">+91
+                                            253 245 6789</a><br>
+                                        Emergency: <a href="tel:+919876543210" class="text-blue-900 hover:underline">+91
+                                            9876 543210</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Email Addresses</h4>
+                                    <p class="text-gray-600">
+                                        General: <a href="mailto:contact@brightfuturetravels.com"
+                                            class="text-blue-900 hover:underline">contact@brightfuturetravels.com</a><br>
+                                        Bookings: <a href="mailto:bookings@brightfuturetravels.com"
+                                            class="text-blue-900 hover:underline">bookings@brightfuturetravels.com</a><br>
+                                        Support: <a href="mailto:support@brightfuturetravels.com"
+                                            class="text-blue-900 hover:underline">support@brightfuturetravels.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Business Hours</h4>
+                                    <p class="text-gray-600">
+                                        Office: Monday - Saturday, 9:00 AM - 8:00 PM<br>
+                                        Phone Support: 24/7 Available<br>
+                                        Emergency: 24/7 Available<br>
+                                        Sunday: 10:00 AM - 6:00 PM
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Booking -->
+                    <div class="bg-gradient-to-br from-blue-900 to-blue-700 text-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4">Need Immediate Booking?</h3>
+                        <p class="text-blue-100 mb-6">For urgent bookings and immediate assistance, call us directly or
+                            use WhatsApp for quick response.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="tel:+919595120405"
+                                class="bg-white/20 hover:bg-white/30 text-center py-3 px-4 rounded-lg font-semibold transition-all flex items-center justify-center">
+                                <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                                Call Now
+                            </a>
+                            <a href="https://wa.me/919595120405"
+                                class="bg-green-600 hover:bg-green-700 text-center py-3 px-4 rounded-lg font-semibold transition-all flex items-center justify-center">
+                                <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Follow Us</h3>
+                        <p class="text-gray-600 mb-6">Stay connected with us on social media for updates, travel tips,
+                            and special offers.</p>
+
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                <i data-lucide="facebook" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
+                                <i data-lucide="instagram" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                                <i data-lucide="twitter" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors">
+                                <i data-lucide="youtube" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map-section" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Find Us on Map</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Visit our office in Mumbai for personalized travel
+                    consultation and bookings</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Map -->
+                <div class="lg:col-span-2">
+                    <div class="map-container h-96 bg-gray-200 relative">
+                        <!-- Placeholder for Google Maps -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <i data-lucide="map-pin" class="w-16 h-16 text-blue-900 mx-auto mb-4"></i>
+                                <h3 class="text-xl font-bold text-blue-900 mb-2">Interactive Map</h3>
+                                <p class="text-gray-600 mb-4">Google Maps integration would be here</p>
+                                <a href="https://maps.google.com/?q=Mumbai,Maharashtra,India" target="_blank"
+                                    class="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    Open in Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Details -->
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-blue-900 mb-4">Office Location</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-blue-900 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Address</p>
+                                    <p class="text-gray-600 text-sm">Near City Center, College Road, Mumbai, Maharashtra
+                                        422005</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="car" class="w-5 h-5 text-blue-900 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Parking</p>
+                                    <p class="text-gray-600 text-sm">Free parking available for visitors</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="bus" class="w-5 h-5 text-blue-900 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Public Transport</p>
+                                    <p class="text-gray-600 text-sm">Bus stop 200m away, Auto-rickshaw available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-blue-900 mb-4">Nearby Landmarks</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">City Center Mall</span>
+                                <span class="text-sm text-gray-500">500m</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Mumbai Railway Station</span>
+                                <span class="text-sm text-gray-500">3.2km</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Mumbai Airport</span>
+                                <span class="text-sm text-gray-500">25km</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">College Road</span>
+                                <span class="text-sm text-gray-500">100m</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-blue-900 mb-4">Visit Us</h3>
+                        <p class="text-gray-700 text-sm mb-4">Drop by our office for personalized travel planning,
+                            vehicle inspection, and special package discussions.</p>
+                        <div class="flex space-x-3">
+                            <a href="tel:+919595120405"
+                                class="flex-1 bg-blue-900 hover:bg-blue-800 text-white text-center py-2 px-4 rounded-lg text-sm font-semibold transition-colors">
+                                Call Before Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Quick answers to common questions about our services
+                    and booking process</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">How can I book a cab?</h3>
+                        <p class="text-gray-700">You can book through our website contact form, call us at +91 9595
+                            120405, or WhatsApp us. We're available 24/7 for bookings.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">What payment methods do you accept?</h3>
+                        <p class="text-gray-700">We accept cash, UPI, credit/debit cards, and online bank transfers.
+                            Payment can be made before or after the trip as per your convenience.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Do you provide outstation services?</h3>
+                        <p class="text-gray-700">Yes, we provide outstation services across India. We offer both one-way
+                            and round-trip options with competitive pricing and experienced drivers.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Are your vehicles insured?</h3>
+                        <p class="text-gray-700">Yes, all our vehicles are fully insured and regularly maintained. We
+                            also provide comprehensive travel insurance options for long-distance trips.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Can I cancel or modify my booking?</h3>
+                        <p class="text-gray-700">Yes, you can cancel or modify bookings up to 2 hours before the
+                            scheduled time. Cancellation charges may apply for last-minute changes.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Do you provide child seats?</h3>
+                        <p class="text-gray-700">Yes, we provide child seats on request. Please mention this requirement
+                            while booking to ensure availability for your travel date.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">What about tolls and parking charges?</h3>
+                        <p class="text-gray-700">Tolls and parking charges are additional unless specified otherwise in
+                            package deals. We provide transparent pricing with no hidden charges.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Do you offer corporate packages?</h3>
+                        <p class="text-gray-700">Yes, we offer special corporate packages for employee transportation,
+                            business meetings, and corporate events with discounted rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Start Your Journey?</h2>
+            <p class="text-xl text-blue-100 mb-8">Contact us now for immediate booking assistance and travel
+                consultation</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+919595120405"
+                    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 flex items-center justify-center">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                    Call +91 9595 120405
+                </a>
+                <a href="https://wa.me/919595120405"
+                    class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 flex items-center justify-center">
+                    <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
+                    WhatsApp Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Bright Future</h3>
+                            <p class="text-sm text-gray-400">Tours & Travels</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted travel partner for comfortable and affordable journeys
+                        across India and beyond.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400">Outstation Cab</span></li>
+                        <li><span class="text-gray-400">Local Tours</span></li>
+                        <li><span class="text-gray-400">Airport Drop</span></li>
+                        <li><span class="text-gray-400">Premium Cars</span></li>
+                        <li><span class="text-gray-400">International Tours</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
+                            <a href="tel:+919595120405" class="text-gray-400 hover:text-white transition-colors">+91
+                                9595 120405</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                            <a href="mailto:contact@brightfuturetravels.com"
+                                class="text-gray-400 hover:text-white transition-colors">contact@brightfuturetravels.com</a>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-400 mt-1"></i>
+                            <span class="text-gray-400">Mumbai, Maharashtra, India</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-400">24/7 Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Bright Future Tours & Travels. All rights reserved. | Designed with
+                    ❤️ for travelers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919595120405"
+        class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-2xl z-50 transition-all transform hover:scale-110">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-white/95', 'shadow-lg');
+            }
+        });
+
+        // Scroll to map function
+        function scrollToMap() {
+            document.getElementById('map-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Show success message (in real implementation, you would send this to a server)
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+
+            // Reset form
+            this.reset();
+        });
+
+        // Set minimum date to today for travel date input
+        document.getElementById('travelDate').min = new Date().toISOString().split('T')[0];
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Auto-resize textarea
+        document.getElementById('message').addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+    </script>
+</body>
+
+</html>
