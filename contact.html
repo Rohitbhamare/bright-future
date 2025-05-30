@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Bright Future Tours & Travels</title>
+    <title>Contact Us - Bright Future Tours & Travels</title>
     <meta name="description"
-        content="Explore our gallery showcasing premium vehicles, beautiful destinations, happy customers, and memorable trips with Bright Future Tours & Travels.">
+        content="Get in touch with Bright Future Tours & Travels. Contact us for bookings, inquiries, and travel assistance. Available 24/7 for your convenience.">
     <meta name="keywords"
-        content="travel gallery, vehicle photos, destination images, customer photos, travel memories">
+        content="contact travel agency, book cab, travel inquiry, customer support, travel assistance">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -63,100 +63,39 @@
             }
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-            cursor: pointer;
+        .contact-card {
             transition: all 0.3s ease;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
+        .contact-card:hover {
+            transform: translateY(-5px);
         }
 
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-            z-index: 2;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-
-        /* Lightbox styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
+        .map-container {
             position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
         }
 
-        .lightbox img {
-            width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
+        .form-input:focus {
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
         }
 
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .pulse-animation {
+            animation: pulse 2s infinite;
         }
 
-        .filter-btn.active {
-            background: #1e3a8a;
-            color: white;
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
     </style>
 </head>
@@ -187,9 +126,9 @@
                     <a href="services.html"
                         class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Services</a>
                     <a href="gallery.html"
-                        class="text-blue-900 hover:text-yellow-600 font-medium transition-colors">Gallery</a>
+                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Gallery</a>
                     <a href="contact.html"
-                        class="text-gray-700 hover:text-yellow-600 font-medium transition-colors">Contact</a>
+                        class="text-blue-900 hover:text-yellow-600 font-medium transition-colors">Contact</a>
                 </div>
 
                 <!-- Contact Icons -->
@@ -216,8 +155,8 @@
                     <a href="index.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Home</a>
                     <a href="about.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">About</a>
                     <a href="services.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Services</a>
-                    <a href="gallery.html" class="text-blue-900 hover:text-yellow-600 font-medium py-2">Gallery</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Contact</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-yellow-600 font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-blue-900 hover:text-yellow-600 font-medium py-2">Contact</a>
                 </div>
             </div>
         </div>
@@ -227,363 +166,505 @@
     <header class="page-header py-32 flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">Our Gallery</h1>
-                <p class="text-xl max-w-3xl mx-auto animate-slideUp">Explore our premium vehicles, beautiful
-                    destinations, and happy customers</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">Contact Us</h1>
+                <p class="text-xl max-w-3xl mx-auto animate-slideUp">Get in touch for bookings, inquiries, and travel
+                    assistance</p>
             </div>
         </div>
     </header>
 
-    <!-- Gallery Filter Section -->
-
-    <!-- Gallery Grid Section -->
-    <section class="py-12 bg-gray-50">
+    <!-- Quick Contact Section -->
+    <section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-                <!-- Vehicle Photos -->
-                <div class="gallery-item vehicles h-64">
-                    <img src="./traval images/innova direct front.jpeg" alt="Swift Dzire Sedan"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model</h3>
-
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Phone Contact -->
+                <div
+                    class="contact-card bg-gradient-to-br from-blue-600 to-blue-800 text-white p-6 rounded-2xl shadow-lg text-center">
+                    <div
+                        class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation">
+                        <i data-lucide="phone" class="w-8 h-8"></i>
                     </div>
+                    <h3 class="text-lg font-bold mb-2">Call Us Now</h3>
+                    <p class="text-blue-100 mb-4">24/7 Available</p>
+                    <a href="tel:+919595120405"
+                        class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                        +91 9595 120405
+                    </a>
                 </div>
 
-                <div class="gallery-item vehicles h-64">
-                    <img src="./traval images/innova back direct.jpeg" alt="Maruti Ertiga"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Back</h3>
-
+                <!-- WhatsApp Contact -->
+                <div
+                    class="contact-card bg-gradient-to-br from-green-600 to-green-800 text-white p-6 rounded-2xl shadow-lg text-center">
+                    <div
+                        class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation">
+                        <i data-lucide="message-circle" class="w-8 h-8"></i>
                     </div>
+                    <h3 class="text-lg font-bold mb-2">WhatsApp</h3>
+                    <p class="text-green-100 mb-4">Quick Response</p>
+                    <a href="https://wa.me/919595120405"
+                        class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                        Chat Now
+                    </a>
                 </div>
 
-                <div class="gallery-item vehicles h-64">
-                    <img src="./traval images/innova curv.jpeg" alt="Toyota Innova Crysta"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Side</h3>
-
+                <!-- Email Contact -->
+                <div
+                    class="contact-card bg-gradient-to-br from-purple-600 to-purple-800 text-white p-6 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
                     </div>
+                    <h3 class="text-lg font-bold mb-2">Email Us</h3>
+                    <p class="text-purple-100 mb-4">Detailed Inquiries</p>
+                    <a href="mailto:contact@brightfuturetravels.com"
+                        class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                        Send Email
+                    </a>
                 </div>
 
-                <div class="gallery-item vehicles h-64">
-
-                    <img src="./traval images/innova side angle left.jpeg" alt="Tempo Traveller"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Back</h3>
-
+                <!-- Location -->
+                <div
+                    class="contact-card bg-gradient-to-br from-yellow-500 to-yellow-700 text-white p-6 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="map-pin" class="w-8 h-8"></i>
                     </div>
+                    <h3 class="text-lg font-bold mb-2">Visit Us</h3>
+                    <p class="text-yellow-100 mb-4">Mumbai, Maharashtra</p>
+                    <button onclick="scrollToMap()"
+                        class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-semibold transition-colors">
+                        View Map
+                    </button>
                 </div>
-
-                <!-- Premium Cars -->
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova side angle.jpeg" alt="Mercedes E-Class"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Side View</h3>
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova side.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Side View</h3>
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova back.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Side angle</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova front.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model front angle</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/ERTIGA.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Ertiga</h3>
-
-                    </div>
-                </div>
-
-
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/force tempo.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Force Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/FORCE SIDE.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Force Traveller</h3>
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/NEW MODLE TEMPO.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/tempo.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/SIDE TEMPO FRONT.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/SIDE TEMPO WHITE.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.30 PM.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM (1).jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/yellowbus.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/white bus.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/pinkbusside.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/yellowbusfrint.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/yellowbuslarge.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/back seat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/backseaT.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova seats.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/front seat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/QUALITY SEATS.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/SEATS QUALITY.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/TEMPO CLOSE UP SEAT.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/TEMPO SEATS.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.57 PM.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-
-
-                    </div>
-                </div>
-
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/tempo seat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/busseat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/backseatinnova.jpeg" alt="BMW 5 Series"
-                        class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/busseat1.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/TEMPO LUXURY.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/yellowbusseat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-
-
-                    </div>
-                </div>
-
-
-
-
-
             </div>
-
-            <!-- Load More Button -->
-
         </div>
     </section>
 
-    <!-- Customer Testimonials with Photos -->
+    <!-- Main Contact Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-blue-900 mb-4">Send Us a Message</h2>
+                        <p class="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.
+                        </p>
+                    </div>
 
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-semibold text-gray-700 mb-2">First Name
+                                    *</label>
+                                <input type="text" id="firstName" name="firstName" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter your first name">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-semibold text-gray-700 mb-2">Last Name
+                                    *</label>
+                                <input type="text" id="lastName" name="lastName" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter your last name">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address
+                                    *</label>
+                                <input type="email" id="email" name="email" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter your email">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number
+                                    *</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="+91 9876543210">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="service" class="block text-sm font-semibold text-gray-700 mb-2">Service Type
+                                    *</label>
+                                <select id="service" name="service" required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all">
+                                    <option value="">Select a service</option>
+                                    <option value="local-cab">Local Cab Booking</option>
+                                    <option value="outstation">Outstation Travel</option>
+                                    <option value="airport-transfer">Airport Transfer</option>
+                                    <option value="premium-cars">Premium Cars</option>
+                                    <option value="group-travel">Group Travel</option>
+                                    <option value="international-packages">International Packages</option>
+                                    <option value="religious-tours">Religious Tours</option>
+                                    <option value="corporate-travel">Corporate Travel</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="travelDate" class="block text-sm font-semibold text-gray-700 mb-2">Travel
+                                    Date</label>
+                                <input type="date" id="travelDate" name="travelDate"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="pickup" class="block text-sm font-semibold text-gray-700 mb-2">Pickup
+                                    Location</label>
+                                <input type="text" id="pickup" name="pickup"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter pickup location">
+                            </div>
+                            <div>
+                                <label for="destination"
+                                    class="block text-sm font-semibold text-gray-700 mb-2">Destination</label>
+                                <input type="text" id="destination" name="destination"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                    placeholder="Enter destination">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="passengers" class="block text-sm font-semibold text-gray-700 mb-2">Number of
+                                Passengers</label>
+                            <select id="passengers" name="passengers"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all">
+                                <option value="">Select number of passengers</option>
+                                <option value="1">1 Passenger</option>
+                                <option value="2">2 Passengers</option>
+                                <option value="3">3 Passengers</option>
+                                <option value="4">4 Passengers</option>
+                                <option value="5-7">5-7 Passengers</option>
+                                <option value="8-14">8-14 Passengers</option>
+                                <option value="15+">15+ Passengers</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition-all"
+                                placeholder="Tell us more about your travel requirements..."></textarea>
+                        </div>
+
+                        <div class="flex items-start">
+                            <input type="checkbox" id="terms" name="terms" required class="mt-1 mr-3">
+                            <label for="terms" class="text-sm text-gray-600">
+                                I agree to the <a href="#" class="text-blue-900 hover:underline">Terms & Conditions</a>
+                                and <a href="#" class="text-blue-900 hover:underline">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-4 px-6 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center">
+                            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Office Details -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Get in Touch</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Office Address</h4>
+                                    <p class="text-gray-600">Bright Future Tours & Travels<br>
+                                        >
+                                        Mumbai, Maharashtra 422005<br>
+                                        India</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Phone Numbers</h4>
+                                    <p class="text-gray-600">
+                                        Primary: <a href="tel:+919595120405" class="text-blue-900 hover:underline">+91
+                                            9595 120405</a><br>
+                                        Office: <a href="tel:+912532456789" class="text-blue-900 hover:underline">+91
+                                            253 245 6789</a><br>
+                                        Emergency: <a href="tel:+919876543210" class="text-blue-900 hover:underline">+91
+                                            9876 543210</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Email Addresses</h4>
+                                    <p class="text-gray-600">
+                                        General: <a href="mailto:contact@brightfuturetravels.com"
+                                            class="text-blue-900 hover:underline">contact@brightfuturetravels.com</a><br>
+                                        <!-- Bookings: <a href="mailto:bookings@brightfuturetravels.com"
+                                            class="text-blue-900 hover:underline">bookings@brightfuturetravels.com</a><br>
+                                        Support: <a href="mailto:support@brightfuturetravels.com"
+                                            class="text-blue-900 hover:underline">support@brightfuturetravels.com</a> -->
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Business Hours</h4>
+                                    <p class="text-gray-600">
+                                        Office: Monday - Saturday, 9:00 AM - 8:00 PM<br>
+                                        Phone Support: 24/7 Available<br>
+                                        Emergency: 24/7 Available<br>
+                                        Sunday: 10:00 AM - 6:00 PM
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Booking -->
+                    <div class="bg-gradient-to-br from-blue-900 to-blue-700 text-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4">Need Immediate Booking?</h3>
+                        <p class="text-blue-100 mb-6">For urgent bookings and immediate assistance, call us directly or
+                            use WhatsApp for quick response.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="tel:+919595120405"
+                                class="bg-white/20 hover:bg-white/30 text-center py-3 px-4 rounded-lg font-semibold transition-all flex items-center justify-center">
+                                <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                                Call Now
+                            </a>
+                            <a href="https://wa.me/919595120405"
+                                class="bg-green-600 hover:bg-green-700 text-center py-3 px-4 rounded-lg font-semibold transition-all flex items-center justify-center">
+                                <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Follow Us</h3>
+                        <p class="text-gray-600 mb-6">Stay connected with us on social media for updates, travel tips,
+                            and special offers.</p>
+
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                                <i data-lucide="facebook" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
+                                <i data-lucide="instagram" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                                <i data-lucide="twitter" class="w-6 h-6"></i>
+                            </a>
+                            <a href="#"
+                                class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors">
+                                <i data-lucide="youtube" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map-section" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Find Us on Map</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Visit our office in Mumbai for personalized travel
+                    consultation and bookings</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Map -->
+                <div class="lg:col-span-2">
+                    <div class="map-container h-96 bg-gray-200 relative">
+                        <!-- Placeholder for Google Maps -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center w-full h-full">
+                                <i data-lucide="map-pin" class="w-16 h-16 text-blue-900 mx-auto mb-4"></i>
+                                <h3 class="text-xl font-bold text-blue-900 mb-2">Interactive Map</h3>
+                                <p class="text-gray-600 mb-4">Google Maps integration is shown below</p>
+                                <div class="w-full h-72 max-w-4xl mx-auto">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3770.242328486869!2d72.88542!3d19.0970222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDA1JzQ5LjMiTiA3MsKwNTMnMDcuNSJF!5e0!3m2!1sen!2sin!4v1748511915932!5m2!1sen!2sin"
+                                        style="border:0; position:absolute; top:0; left:0; width:100%; height:100%;"
+                                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Location Details -->
+                <div class="space-y-6">
+                    <!-- <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-blue-900 mb-4">Office Location</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-blue-900 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Address</p>
+                                    <p class="text-gray-600 text-sm">Near City Center, College Road, Mumbai, Maharashtra
+                                        422005</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="car" class="w-5 h-5 text-blue-900 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Parking</p>
+                                    <p class="text-gray-600 text-sm">Free parking available for visitors</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="bus" class="w-5 h-5 text-blue-900 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Public Transport</p>
+                                    <p class="text-gray-600 text-sm">Bus stop 200m away, Auto-rickshaw available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="mt-6 flex justify-center">
+                        <div
+                            class="bg-yellow-100 border border-yellow-300 text-yellow-900 px-6 py-4 rounded-xl max-w-xl text-center">
+                            <div class="flex items-center justify-center mb-2">
+                                <i data-lucide="alert-triangle" class="w-5 h-5 mr-2 text-yellow-800"></i>
+                                <h3 class="text-lg font-bold">Payment Instructions</h3>
+                            </div>
+                            <p class="text-sm mb-2">Payment must be made <strong>online after drop-off</strong>.</p>
+                            <div class="text-sm text-center space-y-1">
+                                <p><strong>Bank Account Name:</strong> Bright Future Tours and Travels</p>
+                                <p><strong>IFSC Code:</strong> SBIN0000472</p>
+                                <p><strong>Account Number:</strong> 35327164211</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-blue-900 mb-4">Visit Us</h3>
+                        <p class="text-gray-700 text-sm mb-4">Drop by our office for personalized travel planning,
+                            vehicle inspection, and special package discussions.</p>
+                        <div class="flex space-x-3">
+                            <a href="tel:+919595120405"
+                                class="flex-1 bg-blue-900 hover:bg-blue-800 text-white text-center py-2 px-4 rounded-lg text-sm font-semibold transition-colors">
+                                Call Before Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Quick answers to common questions about our services
+                    and booking process</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">How can I book a cab?</h3>
+                        <p class="text-gray-700">You can book through our website contact form, call us at +91 9595
+                            120405, or WhatsApp us. We're available 24/7 for bookings.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">What payment methods do you accept?</h3>
+                        <p class="text-gray-700">We accept cash, UPI, credit/debit cards, and online bank transfers.
+                            Payment can be made before or after the trip as per your convenience.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Do you provide outstation services?</h3>
+                        <p class="text-gray-700">Yes, we provide outstation services across India. We offer both one-way
+                            and round-trip options with competitive pricing and experienced drivers.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Are your vehicles insured?</h3>
+                        <p class="text-gray-700">Yes, all our vehicles are fully insured and regularly maintained. We
+                            also provide comprehensive travel insurance options for long-distance trips.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Can I cancel or modify my booking?</h3>
+                        <p class="text-gray-700">Yes, you can cancel or modify bookings up to 2 hours before the
+                            scheduled time. Cancellation charges may apply for last-minute changes.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Do you provide child seats?</h3>
+                        <p class="text-gray-700">Yes, we provide child seats on request. Please mention this requirement
+                            while booking to ensure availability for your travel date.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">What about tolls and parking charges?</h3>
+                        <p class="text-gray-700">Tolls and parking charges are additional unless specified otherwise in
+                            package deals. We provide transparent pricing with no hidden charges.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Do you offer corporate packages?</h3>
+                        <p class="text-gray-700">Yes, we offer special corporate packages for employee transportation,
+                            business meetings, and corporate events with discounted rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to Create Your Own Memories?</h2>
-            <p class="text-xl text-blue-100 mb-8">Book your next journey with Bright Future Tours & Travels</p>
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Start Your Journey?</h2>
+            <p class="text-xl text-blue-100 mb-8">Contact us now for immediate booking assistance and travel
+                consultation</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html"
-                    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105">
-                    Book Your Trip Now
+                <a href="tel:+919595120405"
+                    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 flex items-center justify-center">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                    Call +91 9595 120405
                 </a>
-                <a href="services.html"
-                    class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-4 rounded-full transition-all">
-                    View Our Services
+                <a href="https://wa.me/919595120405"
+                    class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105 flex items-center justify-center">
+                    <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
+                    WhatsApp Now
                 </a>
             </div>
         </div>
@@ -684,17 +765,6 @@
         </div>
     </footer>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" src="/placeholder.svg" alt="">
-            <div class="text-center mt-4">
-                <h3 id="lightbox-title" class="text-white text-xl font-bold"></h3>
-            </div>
-        </div>
-    </div>
-
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919595120405"
         class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-2xl z-50 transition-all transform hover:scale-110">
@@ -721,74 +791,17 @@
             }
         });
 
-        // Gallery filter functionality
-        function filterGallery(category) {
-            const items = document.querySelectorAll('.gallery-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-
-            // Remove active class from all buttons
-            buttons.forEach(btn => {
-                btn.classList.remove('active', 'bg-blue-900', 'text-white');
-                btn.classList.add('bg-gray-200', 'text-gray-700');
-            });
-
-            // Add active class to clicked button
-            event.target.classList.add('active', 'bg-blue-900', 'text-white');
-            event.target.classList.remove('bg-gray-200', 'text-gray-700');
-
-            // Filter items
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 100);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
+        // Scroll to map function
+        function scrollToMap() {
+            document.getElementById('map-section').scrollIntoView({
+                behavior: 'smooth'
             });
         }
 
-        // Lightbox functionality
-        function openLightbox(src, title) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox-title').textContent = title;
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+        // Set minimum date to today for travel date input
+        document.getElementById('travelDate').min = new Date().toISOString().split('T')[0];
 
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close lightbox on background click
-        document.getElementById('lightbox').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
-
-        // Close lightbox on escape key
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-
-        // Load more images functionality
-        function loadMoreImages() {
-            // This would typically load more images from a server
-            // For demo purposes, we'll just show an alert
-            alert('More images would be loaded here in a real implementation!');
-        }
-
-        // Animation on scroll
+        // Animate sections on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -802,11 +815,60 @@
             });
         }, observerOptions);
 
-        // Observe elements for animation
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        // Auto-resize textarea
+        document.getElementById('message').addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+
+        // Form submission to WhatsApp
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+
+            const firstName = form.firstName.value.trim();
+            const lastName = form.lastName.value.trim();
+            const email = form.email.value.trim();
+            const phone = form.phone.value.trim();
+            const service = form.service.value;
+            const travelDate = form.travelDate.value;
+            const pickup = form.pickup.value.trim();
+            const destination = form.destination.value.trim();
+            const passengers = form.passengers.value;
+            const message = form.message.value.trim();
+
+            const fullMessage = `
+        🌟 *New Travel Inquiry* 🌟
+        
+        👤 *Name:* ${firstName} ${lastName}
+        📧 *Email:* ${email}
+        📞 *Phone:* ${phone}
+        🛎️ *Service:* ${service}
+        📅 *Travel Date:* ${travelDate || 'Not specified'}
+        📍 *Pickup:* ${pickup || 'Not specified'}
+        🏁 *Destination:* ${destination || 'Not specified'}
+        👥 *Passengers:* ${passengers || 'Not specified'}
+        📝 *Message:* ${message || 'No additional message'}
+        
+        🆗 *Submitted from Website Inquiry Form*
+                `.trim();
+
+            const whatsappUrl = `https://wa.me/919595120405?text=${encodeURIComponent(fullMessage)}`;
+            window.open(whatsappUrl, '_blank');
+
+            // Optional: show alert and reset form after delay
+            setTimeout(() => {
+                alert('Thank you for your message! Redirecting you to WhatsApp...');
+                form.reset();
+            }, 500);
+        });
     </script>
+
 </body>
 
 </html>
