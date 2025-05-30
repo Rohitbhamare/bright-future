@@ -235,341 +235,503 @@
     </header>
 
     <!-- Gallery Filter Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Browse by Category</h2>
+                <p class="text-gray-600 mb-8">Filter our gallery to see specific types of vehicles and services</p>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="filterGallery('all')"
+                        class="filter-btn active px-6 py-3 bg-blue-900 text-white rounded-full font-semibold transition-all hover:scale-105">
+                        All Photos
+                    </button>
+                    <button onclick="filterGallery('traveller')"
+                        class="filter-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-semibold transition-all hover:scale-105 hover:bg-gray-300">
+                        <i data-lucide="users" class="w-4 h-4 inline mr-2"></i>
+                        Traveller
+                    </button>
+                    <button onclick="filterGallery('bus')"
+                        class="filter-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-semibold transition-all hover:scale-105 hover:bg-gray-300">
+                        <i data-lucide="bus" class="w-4 h-4 inline mr-2"></i>
+                        Bus
+                    </button>
+                    <button onclick="filterGallery('innova')"
+                        class="filter-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-semibold transition-all hover:scale-105 hover:bg-gray-300">
+                        <i data-lucide="car" class="w-4 h-4 inline mr-2"></i>
+                        Innova Crysta
+                    </button>
+                    <button onclick="filterGallery('seats')"
+                        class="filter-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-semibold transition-all hover:scale-105 hover:bg-gray-300">
+                        <i data-lucide="armchair" class="w-4 h-4 inline mr-2"></i>
+                        Seats
+                    </button>
+                    <!-- New Happy Customers Filter Button -->
+                    <button onclick="filterGallery('happy-customers')"
+                        class="filter-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-full font-semibold transition-all hover:scale-105 hover:bg-gray-300">
+                        <i data-lucide="heart" class="w-4 h-4 inline mr-2"></i>
+                        Happy Customers
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Gallery Grid Section -->
     <section class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-                <!-- Vehicle Photos -->
-                <div class="gallery-item vehicles h-64">
-                    <img src="./traval images/innova direct front.jpeg" alt="Swift Dzire Sedan"
+                <!-- Innova Crysta Photos -->
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/innova direct front.jpeg', 'Innova Crysta New Model - Front View')">
+                    <img src="./traval images/innova direct front.jpeg" alt="Innova Crysta Front"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model</h3>
-
+                        <h3 class="text-lg font-bold">Innova Crysta New Model</h3>
+                        <p class="text-sm opacity-90">Front View</p>
                     </div>
                 </div>
 
-                <div class="gallery-item vehicles h-64">
-                    <img src="./traval images/innova back direct.jpeg" alt="Maruti Ertiga"
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/innova back direct.jpeg', 'Innova Crysta New Model - Back View')">
+                    <img src="./traval images/innova back direct.jpeg" alt="Innova Crysta Back"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Back</h3>
-
+                        <h3 class="text-lg font-bold">Innova Crysta New Model</h3>
+                        <p class="text-sm opacity-90">Back View</p>
                     </div>
                 </div>
 
-                <div class="gallery-item vehicles h-64">
-                    <img src="./traval images/innova curv.jpeg" alt="Toyota Innova Crysta"
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/innova curv.jpeg', 'Innova Crysta New Model - Side Curve')">
+                    <img src="./traval images/innova curv.jpeg" alt="Innova Crysta Side"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Side</h3>
-
+                        <h3 class="text-lg font-bold">Innova Crysta New Model</h3>
+                        <p class="text-sm opacity-90">Side Curve View</p>
                     </div>
                 </div>
 
-                <div class="gallery-item vehicles h-64">
-
-                    <img src="./traval images/innova side angle left.jpeg" alt="Tempo Traveller"
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/innova side angle left.jpeg', 'Innova Crysta New Model - Left Side')">
+                    <img src="./traval images/innova side angle left.jpeg" alt="Innova Crysta Left Side"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Back</h3>
-
+                        <h3 class="text-lg font-bold">Innova Crysta New Model</h3>
+                        <p class="text-sm opacity-90">Left Side View</p>
                     </div>
                 </div>
 
-                <!-- Premium Cars -->
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova side angle.jpeg" alt="Mercedes E-Class"
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/innova side angle.jpeg', 'Innova Crysta New Model - Side Angle')">
+                    <img src="./traval images/innova side angle.jpeg" alt="Innova Crysta Side Angle"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Side View</h3>
-
+                        <h3 class="text-lg font-bold">Innova Crysta New Model</h3>
+                        <p class="text-sm opacity-90">Side Angle View</p>
                     </div>
                 </div>
 
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova side.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/innova side.jpeg', 'Innova Crysta New Model - Side View')">
+                    <img src="./traval images/innova side.jpeg" alt="Innova Crysta Side"
+                        class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Side View</h3>
-
+                        <h3 class="text-lg font-bold">Innova Crysta New Model</h3>
+                        <p class="text-sm opacity-90">Side View</p>
                     </div>
                 </div>
 
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova back.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/innova back.jpeg', 'Innova Crysta New Model - Back Angle')">
+                    <img src="./traval images/innova back.jpeg" alt="Innova Crysta Back Angle"
+                        class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model Side angle</h3>
-
+                        <h3 class="text-lg font-bold">Innova Crysta New Model</h3>
+                        <p class="text-sm opacity-90">Back Angle</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova front.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/innova front.jpeg', 'Innova Crysta New Model - Front Angle')">
+                    <img src="./traval images/innova front.jpeg" alt="Innova Crysta Front Angle"
+                        class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Innova Crysta New model front angle</h3>
-
+                        <h3 class="text-lg font-bold">Innova Crysta New Model</h3>
+                        <p class="text-sm opacity-90">Front Angle</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/ERTIGA.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+
+                <div class="gallery-item innova h-64"
+                    onclick="openLightbox('./traval images/ERTIGA.jpeg', 'Premium Ertiga')">
+                    <img src="./traval images/ERTIGA.jpeg" alt="Premium Ertiga" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
                         <h3 class="text-lg font-bold">Premium Ertiga</h3>
-
+                        <p class="text-sm opacity-90">7-Seater Comfort</p>
                     </div>
                 </div>
 
-
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/force tempo.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+                <!-- Traveller Photos -->
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/force tempo.jpeg', 'Force Traveller')">
+                    <img src="./traval images/force tempo.jpeg" alt="Force Traveller"
+                        class="w-full h-full object-cover">
                     <div class="gallery-overlay">
                         <h3 class="text-lg font-bold">Force Traveller</h3>
-
+                        <p class="text-sm opacity-90">14-17 Seater</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/FORCE SIDE.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/FORCE SIDE.jpeg', 'Force Traveller Side View')">
+                    <img src="./traval images/FORCE SIDE.jpeg" alt="Force Traveller Side"
+                        class="w-full h-full object-cover">
                     <div class="gallery-overlay">
                         <h3 class="text-lg font-bold">Force Traveller</h3>
-
+                        <p class="text-sm opacity-90">Side View</p>
                     </div>
                 </div>
 
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM.jpeg" alt="BMW 5 Series"
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM.jpeg', 'Premium Traveller')">
+                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM.jpeg" alt="Premium Traveller"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
                         <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <p class="text-sm opacity-90">Luxury Interior</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/NEW MODLE TEMPO.jpeg" alt="BMW 5 Series"
+
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/NEW MODLE TEMPO.jpeg', 'New Model Tempo')">
+                    <img src="./traval images/NEW MODLE TEMPO.jpeg" alt="New Model Tempo"
+                        class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">New Model Tempo</h3>
+                        <p class="text-sm opacity-90">Latest Design</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/tempo.jpeg', 'Premium Traveller')">
+                    <img src="./traval images/tempo.jpeg" alt="Premium Traveller" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Premium Traveller</h3>
+                        <p class="text-sm opacity-90">Group Travel</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/SIDE TEMPO FRONT.jpeg', 'Tempo Front Side View')">
+                    <img src="./traval images/SIDE TEMPO FRONT.jpeg" alt="Tempo Front Side"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
                         <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <p class="text-sm opacity-90">Front Side View</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/tempo.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
 
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/SIDE TEMPO FRONT.jpeg" alt="BMW 5 Series"
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/SIDE TEMPO WHITE.jpeg', 'White Tempo Side View')">
+                    <img src="./traval images/SIDE TEMPO WHITE.jpeg" alt="White Tempo Side"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
                         <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <p class="text-sm opacity-90">White Model</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/SIDE TEMPO WHITE.jpeg" alt="BMW 5 Series"
+
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/WhatsApp Image 2025-05-29 at 7.29.30 PM.jpeg', 'Premium Traveller Interior')">
+                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.30 PM.jpeg"
+                        alt="Premium Traveller Interior" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Premium Traveller</h3>
+                        <p class="text-sm opacity-90">Interior View</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item traveller h-64"
+                    onclick="openLightbox('./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM (1).jpeg', 'Premium Traveller Comfort')">
+                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM (1).jpeg"
+                        alt="Premium Traveller Comfort" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Premium Traveller</h3>
+                        <p class="text-sm opacity-90">Comfort Features</p>
+                    </div>
+                </div>
+
+                <!-- Bus Photos -->
+                <div class="gallery-item bus h-64"
+                    onclick="openLightbox('./traval images/yellowbus.jpeg', 'Yellow Luxury Bus')">
+                    <img src="./traval images/yellowbus.jpeg" alt="Yellow Bus" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Luxury Bus</h3>
+                        <p class="text-sm opacity-90">25-50 Seater</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bus h-64"
+                    onclick="openLightbox('./traval images/white bus.jpeg', 'White Luxury Bus')">
+                    <img src="./traval images/white bus.jpeg" alt="White Bus" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">White Luxury Bus</h3>
+                        <p class="text-sm opacity-90">Premium Comfort</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bus h-64"
+                    onclick="openLightbox('./traval images/pinkbusside.jpeg', 'Pink Bus Side View')">
+                    <img src="./traval images/pinkbusside.jpeg" alt="Pink Bus Side" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Luxury Bus</h3>
+                        <p class="text-sm opacity-90">Side View</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bus h-64"
+                    onclick="openLightbox('./traval images/yellowbusfrint.jpeg', 'Yellow Bus Front View')">
+                    <img src="./traval images/yellowbusfrint.jpeg" alt="Yellow Bus Front"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <h3 class="text-lg font-bold">Yellow Luxury Bus</h3>
+                        <p class="text-sm opacity-90">Front View</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.30 PM.jpeg" alt="BMW 5 Series"
+
+                <div class="gallery-item bus h-64"
+                    onclick="openLightbox('./traval images/yellowbuslarge.jpeg', 'Large Yellow Bus')">
+                    <img src="./traval images/yellowbuslarge.jpeg" alt="Large Yellow Bus"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <h3 class="text-lg font-bold">Large Luxury Bus</h3>
+                        <p class="text-sm opacity-90">50 Seater</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM (1).jpeg" alt="BMW 5 Series"
+
+                <!-- Seats Photos -->
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/back seat.jpeg', 'Premium Back Seats')">
+                    <img src="./traval images/back seat.jpeg" alt="Back Seats" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Premium Back Seats</h3>
+                        <p class="text-sm opacity-90">Comfortable Seating</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/backseaT.jpeg', 'Luxury Back Seats')">
+                    <img src="./traval images/backseaT.jpeg" alt="Luxury Back Seats" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Luxury Back Seats</h3>
+                        <p class="text-sm opacity-90">Premium Comfort</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/innova seats.jpeg', 'Innova Premium Seats')">
+                    <img src="./traval images/innova seats.jpeg" alt="Innova Seats" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Innova Premium Seats</h3>
+                        <p class="text-sm opacity-90">Captain Chairs</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/front seat.jpeg', 'Front Seats')">
+                    <img src="./traval images/front seat.jpeg" alt="Front Seats" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Front Seats</h3>
+                        <p class="text-sm opacity-90">Driver & Co-driver</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/QUALITY SEATS.jpeg', 'Quality Seats')">
+                    <img src="./traval images/QUALITY SEATS.jpeg" alt="Quality Seats"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <h3 class="text-lg font-bold">Quality Seats</h3>
+                        <p class="text-sm opacity-90">Premium Material</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.31 PM.jpeg" alt="BMW 5 Series"
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/SEATS QUALITY.jpeg', 'Premium Seat Quality')">
+                    <img src="./traval images/SEATS QUALITY.jpeg" alt="Premium Seat Quality"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <h3 class="text-lg font-bold">Premium Seat Quality</h3>
+                        <p class="text-sm opacity-90">Luxury Finish</p>
                     </div>
                 </div>
 
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/yellowbus.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/white bus.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/pinkbusside.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/yellowbusfrint.jpeg" alt="BMW 5 Series"
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/TEMPO CLOSE UP SEAT.jpeg', 'Tempo Seat Close-up')">
+                    <img src="./traval images/TEMPO CLOSE UP SEAT.jpeg" alt="Tempo Seat Close-up"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <h3 class="text-lg font-bold">Tempo Seat Close-up</h3>
+                        <p class="text-sm opacity-90">Detail View</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/yellowbuslarge.jpeg" alt="BMW 5 Series"
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/TEMPO SEATS.jpeg', 'Tempo Seats')">
+                    <img src="./traval images/TEMPO SEATS.jpeg" alt="Tempo Seats" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Tempo Seats</h3>
+                        <p class="text-sm opacity-90">Comfortable Layout</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/WhatsApp Image 2025-05-29 at 7.29.57 PM.jpeg', 'Premium Interior Seats')">
+                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.57 PM.jpeg" alt="Premium Interior Seats"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <h3 class="text-lg font-bold">Premium Interior</h3>
+                        <p class="text-sm opacity-90">Luxury Seating</p>
                     </div>
                 </div>
 
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/back seat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/backseaT.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/innova seats.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/front seat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/QUALITY SEATS.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/SEATS QUALITY.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/TEMPO CLOSE UP SEAT.jpeg" alt="BMW 5 Series"
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/tempo seat.jpeg', 'Tempo Seat Configuration')">
+                    <img src="./traval images/tempo seat.jpeg" alt="Tempo Seat Configuration"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <h3 class="text-lg font-bold">Tempo Seat Configuration</h3>
+                        <p class="text-sm opacity-90">Optimal Layout</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/TEMPO SEATS.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/busseat.jpeg', 'Bus Seats')">
+                    <img src="./traval images/busseat.jpeg" alt="Bus Seats" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <h3 class="text-lg font-bold">Premium Traveller</h3>
-
+                        <h3 class="text-lg font-bold">Bus Seats</h3>
+                        <p class="text-sm opacity-90">Comfortable Travel</p>
                     </div>
                 </div>
 
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/WhatsApp Image 2025-05-29 at 7.29.57 PM.jpeg" alt="BMW 5 Series"
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/backseatinnova.jpeg', 'Innova Back Seats')">
+                    <img src="./traval images/backseatinnova.jpeg" alt="Innova Back Seats"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-
-
+                        <h3 class="text-lg font-bold">Innova Back Seats</h3>
+                        <p class="text-sm opacity-90">Spacious Comfort</p>
                     </div>
                 </div>
 
-
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/tempo seat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/busseat1.jpeg', 'Premium Bus Seats')">
+                    <img src="./traval images/busseat1.jpeg" alt="Premium Bus Seats" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-
-
+                        <h3 class="text-lg font-bold">Premium Bus Seats</h3>
+                        <p class="text-sm opacity-90">Luxury Comfort</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/busseat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
-                    <div class="gallery-overlay">
 
-
-                    </div>
-                </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/backseatinnova.jpeg" alt="BMW 5 Series"
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/TEMPO LUXURY.jpeg', 'Tempo Luxury Interior')">
+                    <img src="./traval images/TEMPO LUXURY.jpeg" alt="Tempo Luxury Interior"
                         class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-
-
+                        <h3 class="text-lg font-bold">Tempo Luxury Interior</h3>
+                        <p class="text-sm opacity-90">Premium Experience</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/busseat1.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+
+                <div class="gallery-item seats h-64"
+                    onclick="openLightbox('./traval images/yellowbusseat.jpeg', 'Yellow Bus Seats')">
+                    <img src="./traval images/yellowbusseat.jpeg" alt="Yellow Bus Seats"
+                        class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-
-
+                        <h3 class="text-lg font-bold">Yellow Bus Seats</h3>
+                        <p class="text-sm opacity-90">Comfortable Journey</p>
                     </div>
                 </div>
 
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/TEMPO LUXURY.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+                <!-- NEW: Happy Customers Photos -->
+                <div class="gallery-item happy-customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Family Trip to Lonavala')">
+                    <img src="./images/1.jpeg" alt="Family Trip to Lonavala" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-
-
+                        <h3 class="text-lg font-bold">Family Trip to Lonavala</h3>
+                        <p class="text-sm opacity-90">Happy family enjoying their journey</p>
                     </div>
                 </div>
-                <div class="gallery-item premium h-64">
-                    <img src="./traval images/yellowbusseat.jpeg" alt="BMW 5 Series" class="w-full h-full object-cover">
+
+                <div class="gallery-item happy-customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Corporate Team Outing')">
+                    <img src="./images/3.jpeg" alt="Corporate Team Outing" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-
-
+                        <h3 class="text-lg font-bold">Corporate Team Outing</h3>
+                        <p class="text-sm opacity-90">Team building trip to Alibaug</p>
                     </div>
                 </div>
 
 
 
+                <div class="gallery-item happy-customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'College Trip')">
+                    <img src="./images/4.jpeg" alt="College Trip" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">College Trip</h3>
+                        <p class="text-sm opacity-90">Students enjoying their educational tour</p>
+                    </div>
+                </div>
 
+                <div class="gallery-item happy-customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Senior Citizens Tour')">
+                    <img src="./images/5.jpeg" alt="Senior Citizens Tour" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Senior Citizens Tour</h3>
+                        <p class="text-sm opacity-90">Comfortable travel for elderly groups</p>
+                    </div>
+                </div>
 
+                <div class="gallery-item happy-customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Airport Transfer')">
+                    <img src="./images/6.jpeg" alt="Airport Transfer" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Airport Transfer</h3>
+                        <p class="text-sm opacity-90">Punctual and comfortable airport service</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item happy-customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Family Vacation')">
+                    <img src="./images/8.jpeg" alt="Family Vacation" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Family Vacation</h3>
+                        <p class="text-sm opacity-90">Creating memories with loved ones</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item happy-customers h-64"
+                    onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Weekend Getaway')">
+                    <img src="./images/7.jpeg" alt="Weekend Getaway" class="w-full h-full object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="text-lg font-bold">Weekend Getaway</h3>
+                        <p class="text-sm opacity-90">Quick escape to nearby destinations</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Load More Button -->
-
+            <div class="text-center mt-12">
+                <button onclick="loadMoreImages()"
+                    class="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-4 rounded-full transition-all transform hover:scale-105">
+                    <i data-lucide="plus" class="w-5 h-5 mr-2 inline"></i>
+                    Load More Images
+                </button>
+            </div>
         </div>
     </section>
-
-    <!-- Customer Testimonials with Photos -->
-
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
@@ -622,6 +784,7 @@
                         </a>
                     </div>
                 </div>
+
 
                 <!-- Quick Links -->
                 <div>
@@ -788,6 +951,51 @@
             alert('More images would be loaded here in a real implementation!');
         }
 
+        // Testimonial slider functionality (for home page)
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const totalTestimonials = testimonials.length;
+        const testimonialTrack = document.querySelector('.testimonial-track');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+
+        function showTestimonial(index) {
+            if (testimonialTrack) {
+                const slideWidth = window.innerWidth >= 768 ? 33.333 : 100;
+                testimonialTrack.style.transform = `translateX(-${index * slideWidth}%)`;
+
+                // Update dots
+                if (testimonialDots.length > 0) {
+                    testimonialDots.forEach((dot, i) => {
+                        dot.style.opacity = i === Math.floor(index / (window.innerWidth >= 768 ? 3 : 1)) ? '1' : '0.4';
+                    });
+                }
+            }
+        }
+
+        function nextTestimonial() {
+            const maxSlides = window.innerWidth >= 768 ? totalTestimonials - 3 : totalTestimonials - 1;
+            currentTestimonial = currentTestimonial >= maxSlides ? 0 : currentTestimonial + 1;
+            showTestimonial(currentTestimonial);
+        }
+
+        function prevTestimonial() {
+            const maxSlides = window.innerWidth >= 768 ? totalTestimonials - 3 : totalTestimonials - 1;
+            currentTestimonial = currentTestimonial <= 0 ? maxSlides : currentTestimonial - 1;
+            showTestimonial(currentTestimonial);
+        }
+
+        // Event listeners for testimonial navigation
+        const nextBtn = document.getElementById('next-testimonial');
+        const prevBtn = document.getElementById('prev-testimonial');
+
+        if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
+        if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+
+        // Auto-play testimonials
+        if (testimonialTrack) {
+            setInterval(nextTestimonial, 5000);
+        }
+
         // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
@@ -806,6 +1014,80 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        // Pricing tabs functionality (for home page)
+        function showPricing(type) {
+            // Hide all pricing content
+            document.querySelectorAll('.pricing-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('[id^="tab-"]').forEach(tab => {
+                tab.classList.remove('bg-blue-900', 'text-white');
+                tab.classList.add('bg-gray-200', 'text-gray-700');
+            });
+
+            // Show selected pricing content
+            const pricingContent = document.getElementById(`pricing-${type}`);
+            if (pricingContent) {
+                pricingContent.classList.remove('hidden');
+            }
+
+            // Add active class to selected tab
+            const activeTab = document.getElementById(`tab-${type}`);
+            if (activeTab) {
+                activeTab.classList.remove('bg-gray-200', 'text-gray-700');
+                activeTab.classList.add('bg-blue-900', 'text-white');
+            }
+        }
+
+        // Booking form functionality (for home page)
+        function scrollToBooking() {
+            const bookingForm = document.querySelector('#booking-form');
+            if (bookingForm) {
+                bookingForm.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Set minimum date to today (for home page)
+        const dateInput = document.getElementById('date');
+        if (dateInput) {
+            dateInput.min = new Date().toISOString().split('T')[0];
+        }
+
+        // Booking form submission (for home page)
+        const bookingForm = document.getElementById('booking-form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = {
+                    pickup: document.getElementById('pickup').value,
+                    drop: document.getElementById('drop').value,
+                    date: document.getElementById('date').value,
+                    time: document.getElementById('time').value,
+                    vehicle: document.getElementById('vehicle').value,
+                    tourType: document.getElementById('tour-type').value,
+                    notes: document.getElementById('notes').value
+                };
+
+                // Create WhatsApp message
+                const message = `New Booking Request:
+                    Pickup: ${formData.pickup}
+                    Drop: ${formData.drop}
+                    Date: ${formData.date}
+                    Time: ${formData.time}
+                    Vehicle: ${formData.vehicle}
+                    Tour Type: ${formData.tourType}
+                    Notes: ${formData.notes}`;
+
+                const whatsappUrl = `https://wa.me/919595120405?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        }
     </script>
 </body>
 
